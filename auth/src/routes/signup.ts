@@ -34,12 +34,13 @@ router.post(
     await user.save();
 
     // Generate JSON web token
+
     const userJWT = jwt.sign(
       {
         id: user.id,
         email: user.email,
       },
-      "w"
+      process.env.JWT_KEY!
     );
     // Store it on session object
 
@@ -47,7 +48,7 @@ router.post(
       jwt: userJWT,
     };
 
-    res.status(201).send({ user });
+    res.status(201).send(user);
   }
 );
 
