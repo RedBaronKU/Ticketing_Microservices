@@ -47,3 +47,5 @@ const start = async () => {
 };
 
 start();
+
+// CheckPoint: Lecture 189
