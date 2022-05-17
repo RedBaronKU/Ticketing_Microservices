@@ -1,6 +1,6 @@
 {
   "name": "@redbaron_utk/common",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "./build/index.js",
   "types": "./builld/index.d.ts",
