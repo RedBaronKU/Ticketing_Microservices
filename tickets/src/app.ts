@@ -7,7 +7,11 @@ import {
   currentUser,
 } from "@redbaron_utk/common/build";
 import cookieSession from "cookie-session";
+
 import { createTicketRouter } from "./routes/new";
+import { indexTicketRouter } from "./routes/index";
+import { showTicketRouter } from "./routes/show";
+import { updateTicketRouter } from "./routes/update";
 
 const app = express();
 app.set("trust proxy", true);
@@ -21,6 +25,9 @@ app.use(
 
 app.use(currentUser);
 app.use(createTicketRouter);
+app.use(indexTicketRouter);
+app.use(showTicketRouter);
+app.use(updateTicketRouter);
 
 app.get("*", async () => {
   throw new NotFoundError("Not Found");
