@@ -30406,3 +30406,4 @@ auth/node_modules/ts-nkeys/lib/public.js.map
 auth/node_modules/ts-nkeys/lib/util.d.ts
 auth/node_modules/ts-nkeys/lib/util.js
 auth/node_modules/ts-nkeys/lib/util.js.map
+tickets/node_modules/@redbaron_utk/common/build/events/ticket-created-event.d.ts
