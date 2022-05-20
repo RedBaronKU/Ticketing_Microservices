@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 import { OrderStatus } from "@redbaron_utk/common/build";
 import { TicketDoc } from "./ticket";
+
+export { OrderStatus };
+
 interface OrderAttrs {
   userId: string;
   status: OrderStatus;
@@ -8,7 +11,7 @@ interface OrderAttrs {
   ticket: TicketDoc;
 }
 
-interface OrderDoc {
+interface OrderDoc extends mongoose.Document {
   userId: string;
   status: OrderStatus;
   expiresAt: Date;
