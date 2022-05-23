@@ -45453,3 +45453,4 @@ orders/node_modules/regenerator-runtime/README.md
 orders/node_modules/regenerator-runtime/runtime.js
 tickets/node_modules/@redbaron_utk/common/build/events/ticket-created-event.d.ts
 tickets/node_modules/@redbaron_utk/common/build/events/ticket-updated-event.d.ts
+tickets/.DS_Store
