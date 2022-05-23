@@ -5,5 +5,5 @@ import {
 } from "@redbaron_utk/common/build";
 
 export class TicketUpdatedPublisher extends Publisher<TicketUpdatedEvent> {
-  readonly subject = Subjects.ticketUpdated;
+  subject: Subjects.ticketUpdated = Subjects.ticketUpdated;
 }

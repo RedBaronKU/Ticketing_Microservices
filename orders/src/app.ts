@@ -30,7 +30,7 @@ app.use(newOrderRouter);
 app.use(showOrderRouter);
 
 app.all("*", async (req, res) => {
-  throw new NotFoundError("NotFoundError");
+  throw new NotFoundError("Not Found!")!;
 });
 
 app.use(errorHandler);
