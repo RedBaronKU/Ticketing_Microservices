@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import { Order, OrderStatus } from './order';
+import mongoose from "mongoose";
+import { Order, OrderStatus } from "./order";
 
 interface TicketAttrs {
   id: string;
@@ -62,6 +62,6 @@ ticketSchema.methods.isReserved = async function () {
   return !!existingOrder;
 };
 
-const Ticket = mongoose.model<TicketDoc, TicketModel>('Ticket', ticketSchema);
+const Ticket = mongoose.model<TicketDoc, TicketModel>("Ticket", ticketSchema);
 
 export { Ticket };
