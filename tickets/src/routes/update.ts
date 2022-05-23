@@ -26,7 +26,7 @@ router.put(
     const ticket = await Ticket.findById(req.params.id);
 
     if (!ticket) {
-      throw new NotFoundError("Ticket not found");
+      throw new NotFoundError("Not Found");
     }
 
     if (ticket.userId !== req.currentUser!.id) {
@@ -43,6 +43,7 @@ router.put(
       title: ticket.title,
       price: ticket.price,
       userId: ticket.userId,
+      version: ticket.version,
     });
 
     res.send(ticket);

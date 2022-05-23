@@ -19,7 +19,7 @@ router.delete(
     const order = await Order.findById(orderId).populate("ticket");
 
     if (!order) {
-      throw new NotFoundError("Not Found!!");
+      throw new NotFoundError("Not Found");
     }
     if (order.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
@@ -30,6 +30,7 @@ router.delete(
     // publishing an event saying this was cancelled!
     new OrderCancelledPublisher(natsWrapper.client).publish({
       id: order.id,
+      version: order.version,
       ticket: {
         id: order.ticket.id,
       },
