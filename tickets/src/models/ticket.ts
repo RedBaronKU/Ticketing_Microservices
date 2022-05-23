@@ -1,25 +1,19 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-// An interface that requires the properties
-// that are required to create a user
 interface TicketAttrs {
   title: string;
   price: number;
   userId: string;
 }
 
-//An interface that describes the properties
-// that a User Model has
-interface TicketModel extends mongoose.Model<TicketDoc> {
-  build(attrs: TicketAttrs): TicketDoc;
-}
-
-// An interface that describes the properties
-// that a single User has
 interface TicketDoc extends mongoose.Document {
   title: string;
   price: number;
   userId: string;
+}
+
+interface TicketModel extends mongoose.Model<TicketDoc> {
+  build(attrs: TicketAttrs): TicketDoc;
 }
 
 const ticketSchema = new mongoose.Schema(
@@ -51,6 +45,6 @@ ticketSchema.statics.build = (attrs: TicketAttrs) => {
   return new Ticket(attrs);
 };
 
-const Ticket = mongoose.model<TicketDoc, TicketModel>("Ticket", ticketSchema);
+const Ticket = mongoose.model<TicketDoc, TicketModel>('Ticket', ticketSchema);
 
 export { Ticket };
