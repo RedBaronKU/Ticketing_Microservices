@@ -4,12 +4,12 @@ exports.DatabaseConnectionError = void 0;
 const custom_error_1 = require("./custom-error");
 class DatabaseConnectionError extends custom_error_1.CustomError {
     constructor() {
-        super("DB connection failed");
-        this.reason = "Error connecting to database";
+        super('Error connecting to db');
         this.statusCode = 500;
+        this.reason = 'Error connecting to database';
         Object.setPrototypeOf(this, DatabaseConnectionError.prototype);
     }
-    serializeError() {
+    serializeErrors() {
         return [{ message: this.reason }];
     }
 }

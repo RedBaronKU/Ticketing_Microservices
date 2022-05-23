@@ -1,9 +1,8 @@
-import { CustomError } from "./custom-error";
+import { CustomError } from './custom-error';
 export declare class NotFoundError extends CustomError {
-    message: string;
     statusCode: number;
-    constructor(message: string);
-    serializeError(): {
+    constructor();
+    serializeErrors(): {
         message: string;
     }[];
 }

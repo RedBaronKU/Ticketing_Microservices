@@ -1,9 +1,9 @@
-import { CustomError } from "./custom-error";
+import { CustomError } from './custom-error';
 export declare class DatabaseConnectionError extends CustomError {
-    reason: string;
     statusCode: number;
+    reason: string;
     constructor();
-    serializeError(): {
+    serializeErrors(): {
         message: string;
     }[];
 }

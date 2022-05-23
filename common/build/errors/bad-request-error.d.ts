@@ -1,9 +1,9 @@
-import { CustomError } from "./custom-error";
+import { CustomError } from './custom-error';
 export declare class BadRequestError extends CustomError {
     message: string;
     statusCode: number;
     constructor(message: string);
-    serializeError(): {
+    serializeErrors(): {
         message: string;
     }[];
 }
