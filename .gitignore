@@ -38537,3 +38537,11 @@ orders/node_modules/yn/lenient.js
 orders/node_modules/yn/license
 orders/node_modules/yn/package.json
 orders/node_modules/yn/readme.md
+tickets/node_modules/@redbaron_utk/common/build/events/order-cancelled-event.d.ts
+tickets/node_modules/@redbaron_utk/common/build/events/order-cancelled-event.js
+tickets/node_modules/@redbaron_utk/common/build/events/order-created-event.d.ts
+tickets/node_modules/@redbaron_utk/common/build/events/order-created-event.js
+tickets/node_modules/@redbaron_utk/common/build/events/subjects.d.ts
+tickets/node_modules/@redbaron_utk/common/build/events/subjects.js
+tickets/node_modules/@redbaron_utk/common/build/events/types/order-status.d.ts
+tickets/node_modules/@redbaron_utk/common/build/events/types/order-status.js

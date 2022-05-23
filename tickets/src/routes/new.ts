@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { requireAuth } from "@redbaron_utk/common/build";
+import { requireAuth, validateRequest } from "@redbaron_utk/common/build";
 import { body } from "express-validator";
 import { Ticket } from "../models/ticket";
 import { TicketCreatedPublisher } from "../events/publishers/ticket-created-publisher";
@@ -15,6 +15,7 @@ router.post(
       .isFloat({ gt: 0 })
       .withMessage("Price must be greater than zero"),
   ],
+  validateRequest,
   async (req: Request, res: Response) => {
     const { title, price } = req.body;
 
@@ -24,11 +25,11 @@ router.post(
       userId: req.currentUser!.id,
     });
     await ticket.save();
-    new TicketCreatedPublisher(natsWrapper.client).publish({
+    await new TicketCreatedPublisher(natsWrapper.client).publish({
       id: ticket.id,
       title: ticket.title,
       price: ticket.price,
-      userId: req.currentUser!.id,
+      userId: ticket.userId,
     });
     res.status(201).send(ticket);
   }
