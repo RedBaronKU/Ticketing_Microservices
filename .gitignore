@@ -4858,7 +4858,6 @@ auth/node_modules/node-sass/scripts/util/downloadoptions.js
 auth/node_modules/node-sass/scripts/util/proxy.js
 auth/node_modules/node-sass/scripts/util/rejectUnauthorized.js
 auth/node_modules/node-sass/scripts/util/useragent.js
-auth/node_modules/node-sass/src/.DS_Store
 auth/node_modules/node-sass/src/binding.cpp
 auth/node_modules/node-sass/src/callback_bridge.h
 auth/node_modules/node-sass/src/create_string.cpp
@@ -5176,7 +5175,6 @@ auth/node_modules/node-sass/test/fixtures/watching-dir-01/index.scss
 auth/node_modules/node-sass/test/fixtures/watching-dir-02/foo.scss
 auth/node_modules/node-sass/test/fixtures/watching-dir-02/index.scss
 auth/node_modules/node-sass/test/scripts/util/proxy.js
-auth/node_modules/node-sass/vendor/.DS_Store
 auth/node_modules/node-sass/vendor/darwin-arm64-108/binding.node
 auth/node_modules/node-sass/vendor/darwin-x64-102/darwin-x64-102_binding.node
 auth/node_modules/nopt/CHANGELOG.md
@@ -45453,4 +45451,3 @@ orders/node_modules/regenerator-runtime/README.md
 orders/node_modules/regenerator-runtime/runtime.js
 tickets/node_modules/@redbaron_utk/common/build/events/ticket-created-event.d.ts
 tickets/node_modules/@redbaron_utk/common/build/events/ticket-updated-event.d.ts
-tickets/.DS_Store
