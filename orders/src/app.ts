@@ -1,16 +1,16 @@
 import express from "express";
 import "express-async-errors";
 import { json } from "body-parser";
+import cookieSession from "cookie-session";
 import {
   errorHandler,
   NotFoundError,
   currentUser,
 } from "@redbaron_utk/common/build";
-import cookieSession from "cookie-session";
 
 import { deleteOrderRouter } from "./routes/delete";
+import { indexOrderRouter } from "./routes/index";
 import { newOrderRouter } from "./routes/new";
-import { indexOrderRouter } from "./routes";
 import { showOrderRouter } from "./routes/show";
 
 const app = express();
@@ -19,17 +19,17 @@ app.use(json());
 app.use(
   cookieSession({
     signed: false,
-    secure: true,
+    secure: process.env.NODE_ENV !== "test",
   })
 );
-
 app.use(currentUser);
-app.use(newOrderRouter);
-app.use(deleteOrderRouter);
-app.use(showOrderRouter);
-app.use(indexOrderRouter);
 
-app.get("*", async () => {
+app.use(deleteOrderRouter);
+app.use(indexOrderRouter);
+app.use(newOrderRouter);
+app.use(showOrderRouter);
+
+app.all("*", async (req, res) => {
   throw new NotFoundError("Not Found");
 });
 
