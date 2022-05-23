@@ -3,7 +3,11 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 
 declare global {
-  function signin(): string[];
+  namespace NodeJS {
+    interface Global {
+      signin(): string[];
+    }
+  }
 }
 
 jest.mock("../nats-wrapper");
@@ -15,17 +19,21 @@ beforeAll(async () => {
 
   mongo = new MongoMemoryServer();
   const mongoUri = await mongo.getUri();
+
   await mongoose.connect(mongoUri);
 });
+
 beforeEach(async () => {
+  jest.clearAllMocks();
   const collections = await mongoose.connection.db.collections();
+
   for (let collection of collections) {
     await collection.deleteMany({});
   }
 });
 
 afterAll(async () => {
-  if (mongo) await mongo.stop();
+  await mongo.stop();
   await mongoose.connection.close();
 });
 
