@@ -56,4 +56,8 @@ router.post(
   }
 );
 
+router.get("/api/payments", (req: Request, res: Response) => {
+  res.status(200).send("USe a post request");
+});
+
 export { router as createChargeRouter };
