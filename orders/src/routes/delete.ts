@@ -19,7 +19,7 @@ router.delete(
     const order = await Order.findById(orderId).populate("ticket");
 
     if (!order) {
-      throw new NotFoundError("Not Found");
+      throw new NotFoundError();
     }
     if (order.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
