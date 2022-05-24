@@ -18,7 +18,7 @@
   "author": "Kumar Utkarsh",
   "license": "ISC",
   "dependencies": {
-    "@redbaron_utk/common": "^1.0.14",
+    "@redbaron_utk/common": "^1.0.17",
     "@types/cookie-session": "^2.0.44",
     "@types/express": "^4.17.12",
     "@types/jsonwebtoken": "^8.5.8",
